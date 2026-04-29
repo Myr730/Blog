@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #222;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  background: #222;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+.inicio {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.imagen-circular {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column; /* 👈 ESTO LOS APILA */
+  gap: 10px; /* espacio entre elementos */
+  width: 300px;
+  margin: 20px auto;
+}
+
+.form input,
+.form textarea,
+.form button {
+  width: 100%;
+  padding: 8px;
+}
