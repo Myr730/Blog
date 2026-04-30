@@ -20,7 +20,7 @@ export default function Login(){
     formInfo.append("username", username);
     formInfo.append("password", password);
 
-    fetch("http://localhost:8000/login", {
+    fetch(`${API_URL}/login`, {
       method: "POST",
       credentials: "include",
       body: formInfo,
