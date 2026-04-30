@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000"
+
 export default function PrivateRoute({ children }) {
   const [isAuth, setIsAuth] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/session-info", {
+    fetch(`${API_URL}/session-info`, {
       method: "GET",
       credentials: "include",
     })

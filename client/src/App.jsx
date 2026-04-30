@@ -11,6 +11,7 @@ import "./App.css"
 import Login from './Login'
 import PrivateRoute from './PrivateRoute'
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
 function Card({ titulo, descripcion, imagen, id_post }) {
   return (
@@ -55,7 +56,7 @@ function Blog() {
   const [busqueda, setBusqueda] = useState("")
 
   useEffect(() => {
-    fetch("http://localhost:8000/posts")
+    fetch(`${API_URL}/posts`)
       .then((res) => res.json())
       .then((data) => setEntries(data))
       .catch((error) => console.log(error))
@@ -111,7 +112,7 @@ function Post() {
   const [post, setPost] = useState({})
 
   useEffect(() => {
-    fetch(`http://localhost:8000/posts/${id_post}`)
+    fetch(`${API_URL}/posts/${id_post}`)
       .then((res) => res.json())
       .then((data) => setPost(data))
       .catch((error) => console.log(error))
@@ -146,7 +147,7 @@ function NewPost() {
     formData.append('text', text)
     formData.append('img', img)
 
-    fetch('http://localhost:8000/posts/new', {
+    fetch(`${API_URL}/posts/new`, {
       method: 'POST',
       body: formData
     })
@@ -194,7 +195,7 @@ function Author() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('http://localhost:8000/authors/' + id_author, {
+    fetch(`${API_URL}/authors/` + id_author, {
       method: "GET",
       credentials: "include"
     })
