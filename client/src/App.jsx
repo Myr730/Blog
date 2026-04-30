@@ -229,10 +229,11 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
 
+        <Route path='/login' element={<Login />} />
         <Route path='/' element={<PrivateRoute><Inicio /></PrivateRoute>} />
-        <Route path='/blog' element={<PrivateRoute><Blog /></PrivateRoute>} />
+        <Route path='/blog' element={<Blog />} />
         <Route path='/contacto' element={<PrivateRoute><Contacto /></PrivateRoute>} />
-        <Route path='/blog/:id_post' element={<PrivateRoute><Post /></PrivateRoute>} />
+        <Route path='/blog/:id_post' element={<Post />} />
         <Route path='/blog/nuevo/' element={<PrivateRoute><NewPost /></PrivateRoute>} />
         <Route path='/autores/:id_author' element={<PrivateRoute><Author /></PrivateRoute>} />
       </Routes>
