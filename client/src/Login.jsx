@@ -28,8 +28,10 @@ export default function Login(){
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      navigate('/autores/' + data.id_author);
-    })
+      if (data.id_author) {
+        navigate('/autores/' + data.id_author);
+      }
+})
     .catch((error) => {console.log(error);})
   }
 
