@@ -131,6 +131,7 @@ function Post() {
 }
 
 function NewPost() {
+  const navigate = useNavigate()  
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const [text, setText] = useState('')
@@ -153,7 +154,7 @@ function NewPost() {
     })
       .then(() => {
         alert('Post agregado ')
-        window.location.href = '/blog'
+        navigate('/blog')
       })
       .catch((error) => console.log(error))
   }
